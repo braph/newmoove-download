@@ -1,0 +1,118 @@
+html, body {
+   margin: 0;
+   padding: 30px 30px;
+   background: -webkit-linear-gradient(#54617A, white);
+   background: -o-linear-gradient(#54617A, white);
+   background: -moz-linear-gradient(#54617A, white);
+   background: linear-gradient(#54617A, white);
+   background-attachment: fixed;
+}
+
+.container {
+   width: 700px;
+   margin-left: auto;
+   margin-right: auto;
+   padding: 10px;
+   border: 1px gray solid;
+   border-radius: 25px;
+   background: white;
+}
+
+h1 {
+   text-align: center;
+}
+
+h2 {
+   margin-left: 10px;
+}
+
+ul {
+   list-style-type: none;
+   margin: 0;
+   padding: 0;
+}
+
+li {
+   font-size: 150%;
+   text-align: center;
+   padding: 4px;
+   width: 98%;
+   border-radius: 7px;
+   margin: 4px;
+}
+
+a {
+   color: blue;
+   text-decoration: none;
+}
+
+a:visited {
+   color: blue;
+   text-decoration: none;
+}
+
+.back a {
+   color: gray;
+   text-decoration: none;
+}
+
+.back a:visited {
+   color: gray;
+   text-decoration: none;
+}
+
+li a {
+   text-decoration: none;
+   color: #000;
+   display: block;
+}
+
+li a:visited {
+   text-decoration: none;
+   color: #000;
+   display: block;
+}
+
+li:nth-child(even) {
+   background-color: #DDFFEE;
+}
+
+li:nth-child(odd) {
+   background-color: #EEFFEE;
+}
+
+tr:nth-child(even) {
+   background-color: #DDFFEE;
+}
+
+tr:nth-child(odd) {
+   background-color: #EEFFEE;
+}
+
+.course_listing_table {
+   width: 98%;
+   padding: 5px;
+   margin: 5px auto;
+   border: 1px gray solid;
+   border-radius: 7px;
+}
+
+.course_video {
+   width: 98%;
+   padding: 5px;
+   margin: 5px auto;
+   border: 1px gray solid;
+   border-radius: 7px;
+}
+
+.course_view {
+   width: 98%;
+   padding: 5px;
+   margin: 5px auto;
+   border: 1px solid gray;
+   border-radius: 7px;
+}
+
+.course_view table {
+   width: 100%;
+}
