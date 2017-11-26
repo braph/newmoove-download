@@ -196,12 +196,16 @@ class NewMoove:
         for input_tag in tree.xpath('//input'):
             data[input_tag.name] = input_tag.value
 
-        # extracting 'background' parameter
+        # approach #1, extracting 'background' parameter by <script>
         try:
             js = tree.xpath('//script[@type="text/javascript" and contains(text(), "/cms/img")]/text()')[0]
             data['background'] = re.findall("/cms[^']+", js)[0]
         except:
-            logger.debug('Could not get background parameter')
+            # approach #2, extract background parameter by <div>, https://www.newmoove.com/workouts/original-pilates
+            try:
+                data['background'] = tree.xpath('//div[contains(@class, "as-radio-aktiv")]/@id')[0]
+            except:
+                logger.debug('Could not get background parameter')
 
         r = self.session.post(self.newmoove_url('/cms/LightBox.html'), data)
         #with open('/tmp/test.html', 'w') as f:
