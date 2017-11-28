@@ -15,19 +15,19 @@ from utils import remember_cwd
 # === command line parser ===
 argp = argparse.ArgumentParser(description=__doc__)
 
-def add_auth_options(parser):
+def add_auth_options(parser, required=True):
     parser.add_argument('--email',
         help='Set email for authentication',
-        required=True)
+        required=required)
     parser.add_argument('--password',
         help='Set password for authentication',
-        required=True)
+        required=required)
 
 subparsers = argp.add_subparsers(dest='cmd')
 
 list_workouts = subparsers.add_parser('list_workouts',
     help='List all available workout categories')
-add_auth_options(list_workouts)
+add_auth_options(list_workouts, required=False)
 
 download_course = subparsers.add_parser('download_course',
     help='Download single course')
