@@ -2,9 +2,11 @@ import os
 import json
 from string import Template
 from utils import remember_cwd
+import __main__ as main
 
 def read_template(file_name):
-    with open(os.path.join(__path__[0], 'templates', file_name), 'r') as fh:
+    with open(os.path.join(
+        os.path.dirname(main.__file__), 'templates', file_name), 'r') as fh:
         return fh.read()
 
 css = read_template('style.css')
@@ -37,7 +39,7 @@ def generate_course_html(course_directory, course_info):
 def generate_course_listing_html(workouts_directory):
     template = Template(read_template('course_listing.html'))
     course_template = Template('''
-    <div class="course_listing_table">
+    <div class="course_listing">
         <table>
             <tr>
                 <td>Titel: </td>
@@ -89,8 +91,9 @@ def generate_course_listing_html(workouts_directory):
 
 
         body = ''
+        levels = ('Einsteiger', 'Fortgeschrittene', 'Experten')
 
-        for level in ('Einsteiger', 'Fortgeschrittene', 'Experten'):
+        for level in levels:
             body += '<h2>%s</h2>' % level
 
             for course_info in filter(lambda x: x['level'] == level, course_infos):

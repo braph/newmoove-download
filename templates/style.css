@@ -51,12 +51,12 @@ a:visited {
    text-decoration: none;
 }
 
-.back a {
+.back {
    color: gray;
    text-decoration: none;
 }
 
-.back a:visited {
+.back:visited {
    color: gray;
    text-decoration: none;
 }
@@ -74,27 +74,31 @@ li a:visited {
 }
 
 li:nth-child(even) {
-   background-color: #DDFFEE;
+   background-color: #CED2D9;
 }
 
 li:nth-child(odd) {
-   background-color: #EEFFEE;
+   background-color: #E4E6EA;
 }
 
 tr:nth-child(even) {
-   background-color: #DDFFEE;
+   background-color: #CED2D9;
 }
 
 tr:nth-child(odd) {
-   background-color: #EEFFEE;
+   background-color: #E4E6EA;
 }
 
-.course_listing_table {
+.course_listing {
    width: 98%;
    padding: 5px;
    margin: 5px auto;
    border: 1px gray solid;
    border-radius: 7px;
+}
+
+.course_listing table {
+   width: 100%;
 }
 
 .course_video {
