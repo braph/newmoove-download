@@ -154,7 +154,9 @@ elif options.cmd == 'generate_html':
 else:
     nm = newmoove.NewMoove()
     nm.useragent(options.useragent)
-    nm.login(options.email, options.password)
+
+    if options.email and options.password:
+        nm.login(options.email, options.password)
 
     if options.cmd == 'list_workouts':
         for workout in nm.list_workout_categories():
